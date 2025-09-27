@@ -1,5 +1,5 @@
-import { Movie } from "@/types/movies";
-import { TVShows } from "@/types/tvshows";
+import { Movie } from "@/types/movies.types";
+import { TVShows } from "@/types/tvshows.types";
 import * as AC from "@bacons/apple-colors";
 import { Image } from "expo-image";
 import { router } from "expo-router";

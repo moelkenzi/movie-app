@@ -1,6 +1,6 @@
 import { TMDB_CONFIG } from "@/constants";
 import { Response } from "@/types/main";
-import { Movie, MovieDetails } from "@/types/movies";
+import { Movie, MovieDetails } from "@/types/movies.types";
 
 export const fetchTrendingMovies = async (): Promise<Movie[]> => {
   const endpoint = `${TMDB_CONFIG.BASE_URL}/trending/movie/day`;

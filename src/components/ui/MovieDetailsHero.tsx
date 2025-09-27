@@ -1,4 +1,5 @@
-import { MovieDetails } from "@/types/movies";
+import { MovieDetails } from "@/types/movies.types";
+import { TVShowsDetails } from "@/types/tvshows.types";
 import * as AC from "@bacons/apple-colors";
 import { label } from "@bacons/apple-colors";
 import { Entypo } from "@expo/vector-icons";
@@ -9,11 +10,17 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ParallaxImageWrapper } from "../custom/ParallaxImageWrapper";
 import { FadeIn } from "../global/FadeIn";
 
+interface MovieDetailsHeroProps {
+  movieDetails?: MovieDetails;
+  tvShowDetails?: TVShowsDetails;
+}
+
+type MediaType = "movie" | "tv";
+
 export default function MovieDetailsHero({
   movieDetails,
-}: {
-  movieDetails: MovieDetails;
-}) {
+  tvShowDetails,
+}: MovieDetailsHeroProps) {
   const { top } = useSafeAreaInsets();
 
   return (
@@ -118,7 +125,7 @@ export default function MovieDetailsHero({
                 {movieDetails?.title}
               </Text>
               <Text style={{ fontSize: 15, color: label, opacity: 0.8 }}>
-                {movieDetails?.tagline}
+                {movieDetails?.tagline} {movieDetails?.id}
               </Text>
             </View>
           </View>

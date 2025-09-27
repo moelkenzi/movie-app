@@ -20,6 +20,7 @@ export default function RootLayout() {
         <Stack>
           <Stack.Screen name='index' options={{ headerShown: false }} />
           <Stack.Screen name='movie' options={{ headerShown: false }} />
+          <Stack.Screen name='tvshow' options={{ headerShown: false }} />
         </Stack>
       </ThemeProvider>
     </QueryClientProvider>

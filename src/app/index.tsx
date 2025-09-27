@@ -1,10 +1,11 @@
 import Header from "@/components/layout/Header";
 import MovieCard from "@/components/ui/MovieCard";
 import { Loading } from "@/components/ui/Skeleton";
+import TVShowCard from "@/components/ui/TVShowCard";
 import { fetchTrendingMovies } from "@/services/movies";
 import { fetchTrendingTVShows } from "@/services/tvshows";
-import { Movie } from "@/types/movies";
-import { TVShows } from "@/types/tvshows";
+import { Movie } from "@/types/movies.types";
+import { TVShows } from "@/types/tvshows.types";
 import { useQuery } from "@tanstack/react-query";
 import { FlatList, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -49,13 +50,15 @@ export default function App() {
           <Text className='text-2xl px-2 font-bold text-white'>
             Trending TV Shows
           </Text>
-          <FlatList
-            data={tvShows}
+          {/* <FlatList
+            data={[]}
             horizontal
-            renderItem={({ item }) => <MovieCard item={item} />}
-            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => <TVShowCard />}
+            // keyExtractor={(item) => item.id.toString()}
             showsHorizontalScrollIndicator={false}
-          />
+          /> */}
+          <Text className='text-white text-3xl px-2'>TV Shows</Text>
+          <TVShowCard />
         </View>
       </View>
     </SafeAreaView>
