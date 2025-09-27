@@ -1,5 +1,24 @@
+import { DarkTheme } from "@react-navigation/native";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
 import "../../global.css";
+
+const queryClient = new QueryClient();
+
+const myTheme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    primary: "#000000",
+  },
+};
+
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Stack>
+        <Stack.Screen name='index' options={{ headerShown: false }} />
+      </Stack>
+    </QueryClientProvider>
+  );
 }
