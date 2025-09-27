@@ -1,4 +1,4 @@
-import { DarkTheme } from "@react-navigation/native";
+import { DarkTheme, ThemeProvider } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
 import "../../global.css";
@@ -16,9 +16,12 @@ const myTheme = {
 export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Stack>
-        <Stack.Screen name='index' options={{ headerShown: false }} />
-      </Stack>
+      <ThemeProvider value={myTheme}>
+        <Stack>
+          <Stack.Screen name='index' options={{ headerShown: false }} />
+          <Stack.Screen name='movie' options={{ headerShown: false }} />
+        </Stack>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

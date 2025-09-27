@@ -18,7 +18,7 @@ export interface Movie {
 export interface MovieDetails {
   adult: boolean;
   backdrop_path: string;
-  belongs_to_collection: BelongsToCollection;
+  belongs_to_collection: null;
   budget: number;
   genres: Genre[];
   homepage: string;
@@ -30,12 +30,12 @@ export interface MovieDetails {
   overview: string;
   popularity: number;
   poster_path: string;
-  production_companies: ProductionCompany[];
-  production_countries: ProductionCountry[];
+  production_companies: Productioncompany[];
+  production_countries: Productioncountry[];
   release_date: string;
   revenue: number;
   runtime: number;
-  spoken_languages: SpokenLanguage[];
+  spoken_languages: Spokenlanguage[];
   status: string;
   tagline: string;
   title: string;
@@ -44,20 +44,20 @@ export interface MovieDetails {
   vote_count: number;
 }
 
-interface SpokenLanguage {
+interface Spokenlanguage {
   english_name: string;
   iso_639_1: string;
   name: string;
 }
 
-interface ProductionCountry {
+interface Productioncountry {
   iso_3166_1: string;
   name: string;
 }
 
-interface ProductionCompany {
+interface Productioncompany {
   id: number;
-  logo_path: string;
+  logo_path: null | string;
   name: string;
   origin_country: string;
 }
@@ -65,11 +65,4 @@ interface ProductionCompany {
 interface Genre {
   id: number;
   name: string;
-}
-
-interface BelongsToCollection {
-  id: number;
-  name: string;
-  poster_path: string;
-  backdrop_path: string;
 }
