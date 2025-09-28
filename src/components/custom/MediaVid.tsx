@@ -19,7 +19,7 @@ export default function MediaVid({ videos }: { videos: VidResult[] }) {
   );
 }
 
-function HorizontalList({
+export function HorizontalList({
   title,
   children,
 }: {
