@@ -76,6 +76,7 @@ export default function SearchScreen() {
         data={movies}
         renderItem={({ item }) => <SearchCard item={item} />}
         numColumns={3}
+        keyExtractor={(item) => item.id.toString()}
         // scrollEnabled={false}
         contentContainerStyle={{ gap: 4 }}
         onEndReached={() => fetchNextPage()}

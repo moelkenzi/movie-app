@@ -16,7 +16,7 @@ export default function App() {
   const aref = useAnimatedRef<Animated.ScrollView>();
   const { data: movies } = useQuery<Movie[]>({
     queryKey: ["trending-movies"],
-    queryFn: fetchTrendingMovies,
+    queryFn: () => fetchTrendingMovies({}),
   });
 
   const { data, isLoading } = useQuery<TVShows[]>({
