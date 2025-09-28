@@ -3,6 +3,7 @@ import { Image } from "expo-image";
 import { Text, View } from "react-native";
 import { ParallaxImageWrapper } from "../custom/ParallaxImageWrapper";
 import { FadeIn } from "../global/FadeIn";
+import PlayBtn from "../global/PlayBtn";
 
 export default function TVShowDetailsHero({
   tvShowDetails,
@@ -33,6 +34,7 @@ export default function TVShowDetailsHero({
             flexDirection: "row",
           }}
         >
+          <PlayBtn />
           <View
             style={{
               position: "absolute",

@@ -7,16 +7,16 @@ import { fetchTrendingTVShows } from "@/services/tvshows";
 import { Movie } from "@/types/movies.types";
 import { TVShows } from "@/types/tvshows.types";
 import { useQuery } from "@tanstack/react-query";
-import { FlatList, StatusBar, Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
-  const { data: movies, isLoading } = useQuery<Movie[]>({
+  const { data: movies } = useQuery<Movie[]>({
     queryKey: ["trending-movies"],
     queryFn: fetchTrendingMovies,
   });
 
-  const { data } = useQuery<TVShows[]>({
+  const { data, isLoading } = useQuery<TVShows[]>({
     queryKey: ["trending-tv-shows"],
     queryFn: fetchTrendingTVShows,
   });

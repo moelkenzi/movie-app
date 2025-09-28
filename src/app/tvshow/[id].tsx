@@ -13,10 +13,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocalSearchParams } from "expo-router";
 import Animated, { useAnimatedRef } from "react-native-reanimated";
 export default function TVShowDetails() {
-  const { id, isLoading } = useLocalSearchParams();
+  const { id } = useLocalSearchParams();
   const aref = useAnimatedRef<Animated.ScrollView>();
 
-  const { data: tvshowDetails } = useQuery({
+  const { data: tvshowDetails, isLoading } = useQuery({
     queryKey: ["tvshow-details", id],
     queryFn: () => fetchTrendingTVShowsDetails(id as string),
   });

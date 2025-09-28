@@ -5,7 +5,6 @@ import { Text, TouchableOpacity } from "react-native";
 import { HorizontalList } from "../custom/MediaVid";
 
 export default function MediaCastCard({ data }: { data?: CastResponse }) {
-  console.log(JSON.stringify(data?.cast, null, 2));
   if (!data?.cast?.length) {
     return null; // Return nothing if no data or empty cast
   }

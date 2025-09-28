@@ -4,6 +4,7 @@ import { Text, View } from "react-native";
 import { ParallaxImageWrapper } from "../custom/ParallaxImageWrapper";
 import BackBtn from "../global/BackBtn";
 import { FadeIn } from "../global/FadeIn";
+import PlayBtn from "../global/PlayBtn";
 
 interface MovieDetailsHeroProps {
   movieDetails?: MovieDetails;
@@ -35,8 +36,10 @@ export default function MovieDetailsHero({
             padding: 16,
             marginTop: -60,
             flexDirection: "row",
+            position: "relative",
           }}
         >
+          <PlayBtn />
           <View
             style={{
               position: "absolute",
