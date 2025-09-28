@@ -1,6 +1,4 @@
 import { TVShowsDetails } from "@/types/tvshows.types";
-import * as AC from "@bacons/apple-colors";
-import { label } from "@bacons/apple-colors";
 import { Image } from "expo-image";
 import { Text, View } from "react-native";
 import { ParallaxImageWrapper } from "../custom/ParallaxImageWrapper";
@@ -43,7 +41,7 @@ export default function TVShowDetailsHero({
               bottom: 0,
               top: 80,
 
-              backgroundColor: AC.systemGroupedBackground,
+              backgroundColor: "black",
             }}
           />
           <View
@@ -89,13 +87,13 @@ export default function TVShowDetailsHero({
                 style={{
                   fontSize: 24,
                   fontWeight: "bold",
-                  color: label,
+                  color: "white",
                   marginBottom: 8,
                 }}
               >
                 {tvShowDetails?.name}
               </Text>
-              <Text style={{ fontSize: 15, color: label, opacity: 0.8 }}>
+              <Text style={{ fontSize: 15, color: "white", opacity: 0.8 }}>
                 {tvShowDetails?.tagline}
               </Text>
             </View>

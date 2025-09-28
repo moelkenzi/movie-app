@@ -1,4 +1,3 @@
-import * as AC from "@bacons/apple-colors";
 import { StyleSheet, Text, View } from "react-native";
 import InfoRow from "./InfoRow";
 import { MediaInfoProps } from "./mediaInfo.types";
@@ -35,7 +34,7 @@ const MediaInfo = ({ movieDetails, tvShowDetails }: MediaInfoProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: AC.systemGroupedBackground,
+    backgroundColor: "black",
     paddingBottom: 24,
     paddingHorizontal: 16,
     paddingTop: 20,

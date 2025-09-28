@@ -31,7 +31,7 @@ export default function TVShowDetails() {
     queryFn: () => fetchMediaCast({ type: "tv", id: id as string }),
   });
 
-  if (!isLoading) {
+  if (isLoading) {
     return <Skeleton />;
   }
 

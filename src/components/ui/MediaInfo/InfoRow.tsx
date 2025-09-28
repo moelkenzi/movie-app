@@ -1,4 +1,3 @@
-import { label, secondaryLabel } from "@bacons/apple-colors";
 import { StyleSheet, Text, View } from "react-native";
 import { InfoRowProps } from "./mediaInfo.types";
 
@@ -21,13 +20,13 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    color: secondaryLabel,
+    color: "rgba(255,255,255,0.32)",
     flex: 1,
     marginRight: 12,
   },
   value: {
     fontSize: 16,
-    color: label,
+    color: "#ffffff80",
     flex: 2,
     textAlign: "right",
   },

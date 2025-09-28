@@ -7,7 +7,7 @@ import { fetchTrendingTVShows } from "@/services/tvshows";
 import { Movie } from "@/types/movies.types";
 import { TVShows } from "@/types/tvshows.types";
 import { useQuery } from "@tanstack/react-query";
-import { FlatList, Text, View } from "react-native";
+import { FlatList, StatusBar, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {

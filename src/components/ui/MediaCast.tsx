@@ -1,6 +1,5 @@
 import { TMDB_CONFIG } from "@/constants";
 import { Cast, CastResponse } from "@/types/main";
-import { label } from "@bacons/apple-colors";
 import { Image } from "expo-image";
 import { Text, TouchableOpacity } from "react-native";
 import { HorizontalList } from "../custom/MediaVid";
@@ -39,13 +38,13 @@ export function CastCard({ person }: { person?: Cast }) {
         transition={300}
       />
       <Text
-        style={{ fontSize: 14, color: label, marginTop: 4 }}
+        style={{ fontSize: 14, color: "white", marginTop: 4 }}
         numberOfLines={1}
       >
         {person?.name}
       </Text>
       <Text
-        style={{ fontSize: 12, color: label, opacity: 0.7 }}
+        style={{ fontSize: 12, color: "white", opacity: 0.7 }}
         numberOfLines={1}
       >
         {person?.character}

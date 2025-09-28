@@ -1,4 +1,3 @@
-import { label } from "@bacons/apple-colors";
 import { Image } from "expo-image";
 import { Text, View } from "react-native";
 
@@ -11,7 +10,7 @@ export default function VideoCard({ video }: { video?: any }) {
         transition={300}
       />
       <Text
-        style={{ color: label }}
+        style={{ color: "white" }}
         className='text-sm font-medium mt-4 px-2'
         numberOfLines={1}
       >

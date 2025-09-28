@@ -1,4 +1,3 @@
-import { label } from "@bacons/apple-colors";
 import { StyleSheet, Text, View } from "react-native";
 import { SectionProps } from "./mediaInfo.types";
 
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: "600",
-    color: label,
+    color: "white",
     marginBottom: 12,
   },
   sectionContent: {

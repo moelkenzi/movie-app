@@ -26,7 +26,7 @@ export default function TVCard({ item }: { item: TVShows }) {
             style={{
               width: POSTER_WIDTH,
               height: POSTER_HEIGHT,
-              backgroundColor: AC.systemGray5,
+              backgroundColor: "black",
               borderRadius: 12,
             }}
           >
