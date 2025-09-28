@@ -20,7 +20,7 @@ export default function RootLayout() {
       <ThemeProvider value={myTheme}>
         <StatusBar barStyle='light-content' />
         <Stack>
-          <Stack.Screen name='index' options={{ headerShown: false }} />
+          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
           <Stack.Screen name='movie' options={{ headerShown: false }} />
           <Stack.Screen name='tvshow' options={{ headerShown: false }} />
         </Stack>

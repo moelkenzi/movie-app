@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 /**
  * Format a runtime in minutes to a human-readable string (e.g., "2h 15m")
  */
@@ -40,3 +41,14 @@ export const formatDate = (dateString?: string): string => {
     return "N/A";
   }
 };
+
+export function useDebounce<T>(value: T, delay = 500): T {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+
+  return debouncedValue;
+}

@@ -2,8 +2,16 @@ import { TMDB_CONFIG } from "@/constants";
 import { Response } from "@/types/main";
 import { Movie, MovieDetails } from "@/types/movies.types";
 
-export const fetchTrendingMovies = async (): Promise<Movie[]> => {
-  const endpoint = `${TMDB_CONFIG.BASE_URL}/trending/movie/day`;
+export const fetchTrendingMovies = async ({
+  query,
+  pageParam = 1,
+}: {
+  query?: string;
+  pageParam?: number;
+}): Promise<Movie[]> => {
+  const endpoint = query
+    ? `${TMDB_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}&include_adult=false&page=${pageParam}`
+    : `${TMDB_CONFIG.BASE_URL}/trending/movie/day`;
 
   const res = await fetch(endpoint, {
     method: "GET",
