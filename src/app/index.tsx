@@ -1,7 +1,7 @@
 import Header from "@/components/layout/Header";
 import MovieCard from "@/components/ui/MovieCard";
 import { Loading } from "@/components/ui/Skeleton";
-import TVShowCard from "@/components/ui/TVShowCard";
+import TVCard from "@/components/ui/TVShowCard";
 import { fetchTrendingMovies } from "@/services/movies";
 import { fetchTrendingTVShows } from "@/services/tvshows";
 import { Movie } from "@/types/movies.types";
@@ -16,7 +16,7 @@ export default function App() {
     queryFn: fetchTrendingMovies,
   });
 
-  const { data: tvShows } = useQuery<TVShows[]>({
+  const { data } = useQuery<TVShows[]>({
     queryKey: ["trending-tv-shows"],
     queryFn: fetchTrendingTVShows,
   });
@@ -50,15 +50,13 @@ export default function App() {
           <Text className='text-2xl px-2 font-bold text-white'>
             Trending TV Shows
           </Text>
-          {/* <FlatList
-            data={[]}
+          <FlatList
+            data={data}
+            renderItem={({ item }) => <TVCard item={item} />}
+            keyExtractor={(item) => item.id.toString()}
             horizontal
-            renderItem={({ item }) => <TVShowCard />}
-            // keyExtractor={(item) => item.id.toString()}
             showsHorizontalScrollIndicator={false}
-          /> */}
-          <Text className='text-white text-3xl px-2'>TV Shows</Text>
-          <TVShowCard />
+          />
         </View>
       </View>
     </SafeAreaView>

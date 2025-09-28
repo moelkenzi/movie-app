@@ -41,7 +41,7 @@ const MovieCard = ({ item }: { item: TVShows | Movie }) => (
       </View>
       <View style={{ padding: 8 }}>
         <Text
-          numberOfLines={2}
+          numberOfLines={1}
           style={{
             fontSize: 14,
             fontWeight: "500",

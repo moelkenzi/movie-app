@@ -1,27 +1,23 @@
-import { MovieDetails } from "@/types/movies.types";
+import { TVShowsDetails } from "@/types/tvshows.types";
 import * as AC from "@bacons/apple-colors";
 import { label } from "@bacons/apple-colors";
 import { Image } from "expo-image";
 import { Text, View } from "react-native";
 import { ParallaxImageWrapper } from "../custom/ParallaxImageWrapper";
-import BackBtn from "../global/BackBtn";
 import { FadeIn } from "../global/FadeIn";
 
-interface MovieDetailsHeroProps {
-  movieDetails?: MovieDetails;
-}
-
-export default function MovieDetailsHero({
-  movieDetails,
-}: MovieDetailsHeroProps) {
+export default function TVShowDetailsHero({
+  tvShowDetails,
+}: {
+  tvShowDetails: TVShowsDetails;
+}) {
   return (
     <FadeIn>
       <View>
-        <BackBtn />
         <ParallaxImageWrapper>
           <Image
             source={{
-              uri: `https://image.tmdb.org/t/p/w500/${movieDetails?.backdrop_path}`,
+              uri: `https://image.tmdb.org/t/p/w500/${tvShowDetails?.backdrop_path}`,
             }}
             style={{
               width: "100%",
@@ -64,7 +60,7 @@ export default function MovieDetailsHero({
           >
             <Image
               source={{
-                uri: `https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}`,
+                uri: `https://image.tmdb.org/t/p/w500${tvShowDetails?.poster_path}`,
               }}
               style={{
                 width: 100,
@@ -97,10 +93,10 @@ export default function MovieDetailsHero({
                   marginBottom: 8,
                 }}
               >
-                {movieDetails?.title}
+                {tvShowDetails?.name}
               </Text>
               <Text style={{ fontSize: 15, color: label, opacity: 0.8 }}>
-                {movieDetails?.tagline} {movieDetails?.id}
+                {tvShowDetails?.tagline}
               </Text>
             </View>
           </View>

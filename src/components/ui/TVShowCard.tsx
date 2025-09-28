@@ -1,31 +1,13 @@
-import { fetchTrendingTVShows } from "@/services/tvshows";
 import { TVShows } from "@/types/tvshows.types";
 import * as AC from "@bacons/apple-colors";
-import { useQuery } from "@tanstack/react-query";
 import { Image } from "expo-image";
 import { router } from "expo-router";
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 const POSTER_WIDTH = 140;
 const POSTER_HEIGHT = 210;
 
-export default function TVShowCard() {
-  const { data } = useQuery<TVShows[]>({
-    queryKey: ["trending-tv-shows"],
-    queryFn: fetchTrendingTVShows,
-  });
-
-  return (
-    <FlatList
-      data={data}
-      renderItem={({ item }) => <TVCard item={item} />}
-      keyExtractor={(item) => item.id.toString()}
-      horizontal
-    />
-  );
-}
-
-function TVCard({ item }: { item: TVShows }) {
+export default function TVCard({ item }: { item: TVShows }) {
   return (
     <>
       <TouchableOpacity
@@ -60,7 +42,7 @@ function TVCard({ item }: { item: TVShows }) {
           </View>
           <View style={{ padding: 8 }}>
             <Text
-              numberOfLines={2}
+              numberOfLines={1}
               style={{
                 fontSize: 14,
                 fontWeight: "500",
@@ -68,7 +50,7 @@ function TVCard({ item }: { item: TVShows }) {
                 marginBottom: 4,
               }}
             >
-              {/* {"title" in item ? item.title : item.name} */}
+              {item.name}
             </Text>
             <Text
               style={{
@@ -76,7 +58,7 @@ function TVCard({ item }: { item: TVShows }) {
                 color: AC.systemBlue,
               }}
             >
-              {/* {"vote_average" in item && "★ " + item.vote_average.toFixed(1)} */}
+              {item.vote_average && "★ " + item.vote_average.toFixed(1)}
             </Text>
           </View>
         </View>
